@@ -70,7 +70,7 @@
 
         {{-- Botones --}}
         <div class="flex justify-end space-x-3">
-            <a href="{{ route('dashboard') }}"
+            <a href="{{ route('users.index') }}"
                class="px-5 py-2 rounded-lg bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-400 dark:hover:bg-gray-600 transition">
                Cancelar
             </a>

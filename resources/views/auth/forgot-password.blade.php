@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {{-- 🌟 FAVICON PERSONALIZADO --}}
+    <link rel="icon" type="image/png" href="{{ asset('image/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('image/favicon.png') }}">
     <title>Recuperar Contraseña | Casa Maravillosa CRM</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])

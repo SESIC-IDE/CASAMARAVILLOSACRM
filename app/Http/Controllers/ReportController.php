@@ -16,9 +16,11 @@ class ReportController extends Controller
     {
         $customersCount     = Customer::count();
         $interactionsCount  = Interaction::count();
-        $remindersPending   = Reminder::where('status', 'pending')->count();
-        $remindersCompleted = Reminder::where('status', 'completed')->count();
-        $remindersOverdue   = Reminder::where('status', 'overdue')->count();
+
+        // ⚙️ Estados correctos según la BD
+        $remindersPending   = Reminder::where('status', 'Pendiente')->count();
+        $remindersCompleted = Reminder::where('status', 'Completado')->count();
+        $remindersOverdue   = Reminder::where('status', 'Vencido')->count();
 
         // Datos para gráfico
         $chartData = [
@@ -26,6 +28,7 @@ class ReportController extends Controller
             'values' => [$remindersPending, $remindersCompleted, $remindersOverdue],
         ];
 
+        // ✅ Asegúrate de que la vista sea "dashboard" (no "dashboard.index" si no existe la carpeta)
         return view('dashboard.index', compact(
             'customersCount',
             'interactionsCount',
@@ -52,6 +55,6 @@ class ReportController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new CustomersExport, 'reporte_clientes.xlsx');
+        return Excel::download(new CustomersExport, 'clientes.xlsx');
     }
 }

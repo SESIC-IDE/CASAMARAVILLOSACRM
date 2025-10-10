@@ -30,10 +30,14 @@
     <nav class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            {{-- LOGO / TITULO --}}
-            <a href="{{ route('dashboard') }}" class="text-lg font-bold text-indigo-600 dark:text-indigo-400">
-                Casa Maravillosa CRM
-            </a>
+            {{-- LOGO / TÍTULO --}}
+<a href="{{ route('dashboard') }}" class="flex items-center gap-2 text-lg font-bold text-indigo-600 dark:text-indigo-400">
+    <img src="{{ asset('image/LOGO.jpg') }}" 
+         alt="Logo Casa Maravillosa CRM" 
+         class="w-8 h-8 object-contain rounded-md shadow-sm">
+    <span>Casa Maravillosa CRM</span>
+</a>
+
 
             {{-- NAVEGACIÓN PRINCIPAL --}}
             <div class="flex items-center space-x-5">
